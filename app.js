@@ -19,10 +19,10 @@ const hpp = require('hpp');
 const mongoSanitize = require('express-mongo-sanitize');
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
-const path = require('path');
+const corsOptions = require('./config/corsOptions');
 const app = express();
 
-app.use(cors());
+app.use(cors(corsOptions));
 // 1. GLOBAL MIDDLEWARES
 // Set security HTTP headers
 app.use(helmet());
